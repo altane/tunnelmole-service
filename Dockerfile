@@ -8,7 +8,7 @@ WORKDIR /app
 RUN git clone https://github.com/altane/tunnelmole-service.git . && \
 
     # Installer gettext 
-    apt update && apt get gettext -y && \
+    apt update && apt install gettext -y && \
 
     # Installer les dépendances
     npm install && \
