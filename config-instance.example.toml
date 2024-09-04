@@ -1,4 +1,4 @@
-environment = "${ENVIRONMENT:-local}"
+environment = "${ENVIRONMENT}"
 
 ###
 # Config for the web and websockets servers
