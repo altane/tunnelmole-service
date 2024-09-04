@@ -10,6 +10,9 @@ RUN git clone https://github.com/altane/tunnelmole-service.git . && \
     # Installer gettext 
     apt update && apt install gettext -y && \
 
+    # add execution rights
+    chmod +x entrypoint.sh
+
     # Installer les dépendances
     npm install
 
