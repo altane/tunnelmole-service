@@ -19,7 +19,4 @@ RUN git clone https://github.com/altane/tunnelmole-service.git . && \
 # Exposer le port sur lequel le service va écouter
 EXPOSE 80 81
 
-ENTRYPOINT ["entrypoint.sh"]
-
-# Démarrer le service
-CMD ["npm", "run", "start-prod"]
+ENTRYPOINT ["/app/entrypoint.sh"]
