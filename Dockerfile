@@ -11,16 +11,12 @@ RUN git clone https://github.com/altane/tunnelmole-service.git . && \
     apt update && apt install gettext -y && \
 
     # Installer les dépendances
-    npm install && \
-
-    # Copier le fichier de configuration
-    cat config-instance.example.toml | envsubst > config-instance.toml && \
-
-    # Construire le projet
-    npm run build
+    npm install
 
 # Exposer le port sur lequel le service va écouter
 EXPOSE 80 81
 
+ENTRYPOINT ["entrypoint.sh"]
+
 # Démarrer le service
-CMD ["npm", "start"]
+CMD ["npm", "run", "start-prod"]
