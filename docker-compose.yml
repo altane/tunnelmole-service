@@ -13,6 +13,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD:-password}
       MYSQL_HOST: ${MYSQL_HOST:-localhost}
       DB_NAME: ${DB_NAME:-tunnelmole}
+      NODE_ENV: production
     ports:
       - 80:${HTTP_PORT}
       - 81:${WS_PORT}
