@@ -1,4 +1,4 @@
-environment = "local"
+environment = "${ENVIRONMENT:-local}"
 
 ###
 # Config for the web and websockets servers
@@ -6,34 +6,34 @@ environment = "local"
 # By default this is only the endpoint that lists active connections for debugging purposes
 ###
 [server]
-httpPort = 8000
-websocketPort = 8080
-domain = 'localhost'
-password = 'changeme'
+httpPort = ${HTTP_PORT}
+websocketPort = ${WS_PORT}
+domain = '${DOMAIN}'
+password = '${TUNNEL_PASSWORD}'
 
 # A list of banned IPs
 bannedIps = [
-    '999.999.999.999',
+   # '999.999.999.999',
 ]
 
 # A list of banned Client IDs
 bannedClientIds = [
-    'df3453rewr349543utff'
+   # 'df3453rewr349543utff'
 ]
 
 # A list of banned hostnames
 bannedHostnames = [
-    'evil.com'
+    # 'evil.com'
 ]
 
 ###
 # MySQL is used for Logging wnen it is enabled
 ###
 [mysql]
-host = 'localhost'
-user = 'root'
-password = 'changeme'
-database = 'tunnelmole'
+host = '${MYSQL_HOST}'
+user = '${MYSQL_USER}'
+password = '${MYSQL_PASSWORD}'
+database = '${DB_NAME}'
 
 ###
 # Enable or disable debug output and logging
